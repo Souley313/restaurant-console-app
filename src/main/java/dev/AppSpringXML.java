@@ -21,7 +21,7 @@ public class AppSpringXML {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-config-memoire.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-config-fichier.xml");
 		
 		// récupération du bean Menu
 		Menu menu = context.getBean(Menu.class);
