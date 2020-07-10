@@ -6,11 +6,15 @@ import dev.exception.PlatException;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+@Service
 public class PlatServiceVersion1 implements IPlatService {
 
     private IPlatDao dao;
 
-    public PlatServiceVersion1(IPlatDao dao) {
+    public PlatServiceVersion1(@Qualifier("platDaoFichier")IPlatDao dao) {
         this.dao = dao;
     }
 

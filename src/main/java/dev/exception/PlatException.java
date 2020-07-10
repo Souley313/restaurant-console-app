@@ -2,7 +2,12 @@ package dev.exception;
 
 public class PlatException extends RuntimeException {
 
-    public PlatException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public PlatException() {
     }
 
     public PlatException(String message) {
