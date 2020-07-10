@@ -6,12 +6,13 @@
 http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/util
 http://www.springframework.org/schema/util/spring-util.xsd">
-	<!-- Configuration d'un bean dont l'identifiant est "scanner". Il est créé 
-		à partir de la classe "java.util.Scanner" -->
+
+
 	<bean id="platDao" class="dev.dao.PlatDaoFichier">
 		<constructor-arg name="fichierStockage"
 			value="src/main/resources/test.txt" />
 	</bean>
+	
 	<bean id="scanner" class="java.util.Scanner">
 		<constructor-arg>
 			<!-- Référencement du champ static "System.in" -->
