@@ -1,5 +1,6 @@
 package dev.service;
 
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -7,13 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import dev.dao.PlatDaoFichier;
+import dev.config.AppConfig;
+import dev.dao.*;
 import dev.exception.PlatException;
 
 //@ContextConfiguration(classes = PlatServiceVersion2.class)
 //@ExtendWith(SpringExtension.class)
-@SpringJUnitConfig(classes = {PlatServiceVersion2.class, PlatDaoFichier.class})
-@ActiveProfiles({"service2", "fichier"}) 
+@SpringJUnitConfig(classes = {AppConfig.class})
+@ActiveProfiles({"service2", "memoire"})
 public class PlatServiceVersion2IntegrationTest {
 	
 	@Autowired
@@ -26,7 +28,8 @@ public class PlatServiceVersion2IntegrationTest {
 
 	@Test
 	void ajouterPlatPrixInvalide() {
-		assertThrows(PlatException.class, () -> platServiceVersion2.ajouterPlat("RizAupoisson", 120), "le prix d'un plat doit être supérieur à 5 €");
-	}
+		assertThatThrownBy(() -> platServiceVersion2.ajouterPlat("RizAupoisson", 43))
+		.isInstanceOf(PlatException.class)
+		.hasMessage("le prix d'un plat doit être supérieur à 10 €");}
 
 }
