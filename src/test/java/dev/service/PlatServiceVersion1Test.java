@@ -24,13 +24,13 @@ class PlatServiceVersion1Test {
 
 	@Test
 	void ajouterPlatNomInvalide() {
-		assertThrows(PlatException.class, () -> platServiceVersion1.ajouterPlat("Riz", 5200));
+		assertThrows(PlatException.class, () -> platServiceVersion1.ajouterPlat("Riz", 5200), "un plat doit avoir un nom de plus de 3 caractères");
 		
 	}
 	
 	@Test
 	void ajouterPlatPrixInvalide() {
-		assertThrows(PlatException.class, () -> platServiceVersion1.ajouterPlat("Riz Au poisson", 120));
+		assertThrows(PlatException.class, () -> platServiceVersion1.ajouterPlat("Riz Au poisson", 120), "le prix d'un plat doit être supérieur à 5 €");
 		
 	}
 	

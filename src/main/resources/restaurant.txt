@@ -1,2 +1,9 @@
 kebab+frites;1200
 McDonald;1100
+RizAupoison;5600
+Riz Au poisson;6200
+Riz Au poisson;6200
+Riz Au poisson;6200
+Riz Au poisson;6200
+RizAupoisson;6200
+RizAupoisson;6200
