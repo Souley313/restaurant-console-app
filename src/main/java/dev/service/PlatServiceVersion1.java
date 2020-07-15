@@ -7,9 +7,11 @@ import dev.exception.PlatException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile("version1")
 public class PlatServiceVersion1 implements IPlatService {
 
     private IPlatDao dao;
