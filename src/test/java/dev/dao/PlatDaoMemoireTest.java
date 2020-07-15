@@ -1,7 +1,6 @@
 package dev.dao;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ class PlatDaoMemoireTest {
 
 	@Test
 	void ajouterPlatCasPassants() {
-		Plat plat = new Plat("Riz", 1200);
+		Plat plat = new Plat("Riz au poisson", 5200);
 		platDaoMemoire.ajouterPlat(plat.getNom(), plat.getPrixEnCentimesEuros());
 		List<Plat> tmp = platDaoMemoire.listerPlats();
 		
