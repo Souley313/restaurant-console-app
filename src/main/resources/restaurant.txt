@@ -1,3 +1,2 @@
-kebab+frites;1200
-McDonald;1100
-RizAupoison;5600
+pizzas;1600
+bolognaise;3000
