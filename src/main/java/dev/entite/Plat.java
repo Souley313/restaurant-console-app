@@ -2,45 +2,59 @@ package dev.entite;
 
 import java.util.Objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "plat")
 public class Plat {
 
-    private String nom;
-    private Integer prixEnCentimesEuros;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Integer id;
 
-    public Plat() {
-    }
+	@Column(name = "nom")
+	private String nom;
 
-    public Plat(String nom, Integer prixEnCentimesEuros) {
-        this.nom = nom;
-        this.prixEnCentimesEuros = prixEnCentimesEuros;
-    }
+	@Column(name = "prix")
+	private Integer prixEnCentimesEuros;
 
-    public String getNom() {
-        return nom;
-    }
+	public Plat() {
+	}
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	public Plat(String nom, Integer prixEnCentimesEuros) {
+		this.nom = nom;
+		this.prixEnCentimesEuros = prixEnCentimesEuros;
+	}
 
-    public Integer getPrixEnCentimesEuros() {
-        return prixEnCentimesEuros;
-    }
+	public String getNom() {
+		return nom;
+	}
 
-    public void setPrixEnCentimesEuros(Integer prixEnCentimesEuros) {
-        this.prixEnCentimesEuros = prixEnCentimesEuros;
-    }
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Plat plat = (Plat) o;
-        return nom.equals(plat.nom);
-    }
+	public Integer getPrixEnCentimesEuros() {
+		return prixEnCentimesEuros;
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nom);
-    }
+	public void setPrixEnCentimesEuros(Integer prixEnCentimesEuros) {
+		this.prixEnCentimesEuros = prixEnCentimesEuros;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Plat plat = (Plat) o;
+		return nom.equals(plat.nom);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nom);
+	}
 }
